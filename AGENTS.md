@@ -79,6 +79,24 @@ pi
 | usage | Track session tokens/costs | `/usage` |
 | files | Enhanced directory listing | Tool: `list_dir` |
 | commit | Lint, typecheck, build, format → commit | `/commit` |
+| cmux-flash | Flash terminal window for notifications | Tool: `flash` |
+
+## Flash Tool Usage
+
+When you need user attention, call the `flash` tool:
+
+- When **asking questions** that need user input
+- When **waiting for feedback** or confirmation
+- When **task completes** and user should be notified
+- When **blocked** and needs user decision
+
+```
+✅ Call flash when: "Should I use approach A or B?"
+✅ Call flash when: "Task complete, please review"
+✅ Call flash when: "Need your input on design"
+❌ Don't call flash for: "Writing file X..."
+❌ Don't call flash for: "Running tests..."
+```
 
 ## Customization
 
