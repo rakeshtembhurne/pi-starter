@@ -7,11 +7,14 @@ A minimal, production-ready template for AI-assisted development with the [pi co
 Install in current directory:
 
 ```bash
-# Install here (recommended)
+# Install (only copies files that don't exist)
 curl -sSL https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/master/install.sh | bash
 
 # Or install to a specific directory
 curl -sSL https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/master/install.sh | bash -s -- my-project/
+
+# Update existing files to latest version
+curl -sSL https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/master/update.sh | bash
 ```
 
 Then start coding:
