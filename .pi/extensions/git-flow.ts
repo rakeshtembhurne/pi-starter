@@ -73,7 +73,7 @@ export default function (pi: ExtensionAPI) {
             await pi.exec("git", ["checkout", "main"]);
             await pi.exec("git", ["pull"]);
             await pi.exec("git", ["checkout", "-b", `hotfix/${name}`]);
-            ctx.ui.notify(`✅ Created hotfix/hotfix/${name} from main`, "success");
+            ctx.ui.notify(`✅ Created hotfix/${name} from main`, "success");
           }
         } else if (choice?.includes("develop")) {
           await pi.exec("git", ["checkout", "develop"]);
