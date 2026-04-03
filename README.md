@@ -4,22 +4,19 @@ A minimal, production-ready template for AI-assisted development with the [pi co
 
 ## Quick Start
 
-Copy to your project in one command:
+Install in current directory:
 
 ```bash
-# Using curl (recommended)
-curl -sSL https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/main/install.sh | bash -s -- your-project/
+# Install here (recommended)
+curl -sSL https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/master/install.sh | bash
 
-# Or clone and copy
-git clone https://github.com/rakeshtembhurne/pi-starter.git /tmp/pi-starter
-cp -r /tmp/pi-starter/{AGENTS.md,.pi,tasks} your-project/
-rm -rf /tmp/pi-starter
+# Or install to a specific directory
+curl -sSL https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/master/install.sh | bash -s -- my-project/
 ```
 
 Then start coding:
 
 ```bash
-cd your-project
 pi
 ```
 

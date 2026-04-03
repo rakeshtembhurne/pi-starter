@@ -14,7 +14,7 @@ else
 fi
 
 # Download files from GitHub
-BASE_URL="https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/main"
+BASE_URL="https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/master"
 
 # Create directories
 mkdir -p "$TARGET/.pi/extensions"
