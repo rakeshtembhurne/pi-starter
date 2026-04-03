@@ -37,7 +37,32 @@ pi
 | `git-safety.ts` | Confirms dangerous git operations (`git push --force`, etc.) |
 | `usage.ts` | `/usage` - show session tokens and cost |
 | `files.ts` | `list_dir` tool with emoji icons |
-| `git-flow.ts` | Enforces git flow workflow |
+| `git-flow.ts` | Enforces GitFlow workflow (see below) |
+
+### GitFlow Extension
+
+Enforces proper GitFlow branching:
+
+| Branch | Created From | Merges To |
+|--------|--------------|----------|
+| `feature/*` | develop | develop |
+| `hotfix/*` | main | main + develop |
+| `release/*` | develop | main + develop |
+
+**Commands:**
+
+```bash
+/feature <name>    # Create feature/* from develop
+/hotfix <name>     # Create hotfix/* from main
+/release <version> # Create release/* from develop
+/gitflow           # Show current branch status
+```
+
+**Protections:**
+- Blocks commits to `main`/`master`
+- Warns when committing to `develop`
+- Ensures branches created from correct base
+- Validates conventional commit messages
 
 ## Requirements
 
