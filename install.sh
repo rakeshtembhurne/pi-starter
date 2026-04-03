@@ -1,6 +1,8 @@
 #!/bin/bash
 # Install pi-starter into a project directory
 # Usage: curl -sSL https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/master/install.sh | bash -s -- <target-dir>
+#
+# Only installs files that don't exist. Use update.sh to replace existing files.
 
 set -e
 
@@ -13,33 +15,64 @@ else
   mkdir -p "$TARGET"
 fi
 
-# Download files from GitHub
 BASE_URL="https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/master"
 
 # Create directories
 mkdir -p "$TARGET/.pi/extensions"
 mkdir -p "$TARGET/tasks"
 
-# Download core files
-curl -sSL "$BASE_URL/AGENTS.md" -o "$TARGET/AGENTS.md"
-curl -sSL "$BASE_URL/.gitignore" -o "$TARGET/.gitignore"
+SKIPPED=""
+INSTALLED=""
 
-# Download extensions
-curl -sSL "$BASE_URL/.pi/extensions/safety.ts" -o "$TARGET/.pi/extensions/safety.ts"
-curl -sSL "$BASE_URL/.pi/extensions/git-safety.ts" -o "$TARGET/.pi/extensions/git-safety.ts"
-curl -sSL "$BASE_URL/.pi/extensions/usage.ts" -o "$TARGET/.pi/extensions/usage.ts"
-curl -sSL "$BASE_URL/.pi/extensions/files.ts" -o "$TARGET/.pi/extensions/files.ts"
-curl -sSL "$BASE_URL/.pi/extensions/git-flow.ts" -o "$TARGET/.pi/extensions/git-flow.ts"
-
-# Download settings
-curl -sSL "$BASE_URL/.pi/settings.json" -o "$TARGET/.pi/settings.json"
-
-# Download task templates
-curl -sSL "$BASE_URL/tasks/todo.md" -o "$TARGET/tasks/todo.md"
-curl -sSL "$BASE_URL/tasks/lessons.md" -o "$TARGET/tasks/lessons.md"
+# Helper function to download if not exists
+download_if_missing() {
+  local url="$1"
+  local file="$2"
+  local name="$3"
+  
+  if [ -f "$file" ]; then
+    SKIPPED="$SKIPPED $name"
+    echo "  ⏭️  Skipped $name (already exists)"
+  else
+    curl -sSL --no-compressed "$url" -o "$file"
+    INSTALLED="$INSTALLED $name"
+    echo "  ✅ Installed $name"
+  fi
+}
 
 echo ""
-echo "✅ pi-starter installed in $TARGET"
+echo "Installing files..."
+echo ""
+
+# Core files
+download_if_missing "$BASE_URL/AGENTS.md" "$TARGET/AGENTS.md" "AGENTS.md"
+download_if_missing "$BASE_URL/.gitignore" "$TARGET/.gitignore" ".gitignore"
+
+# Extensions
+download_if_missing "$BASE_URL/.pi/extensions/safety.ts" "$TARGET/.pi/extensions/safety.ts" "safety.ts"
+download_if_missing "$BASE_URL/.pi/extensions/git-safety.ts" "$TARGET/.pi/extensions/git-safety.ts" "git-safety.ts"
+download_if_missing "$BASE_URL/.pi/extensions/usage.ts" "$TARGET/.pi/extensions/usage.ts" "usage.ts"
+download_if_missing "$BASE_URL/.pi/extensions/files.ts" "$TARGET/.pi/extensions/files.ts" "files.ts"
+download_if_missing "$BASE_URL/.pi/extensions/git-flow.ts" "$TARGET/.pi/extensions/git-flow.ts" "git-flow.ts"
+
+# Settings
+download_if_missing "$BASE_URL/.pi/settings.json" "$TARGET/.pi/settings.json" "settings.json"
+
+# Task templates
+download_if_missing "$BASE_URL/tasks/todo.md" "$TARGET/tasks/todo.md" "tasks/todo.md"
+download_if_missing "$BASE_URL/tasks/lessons.md" "$TARGET/tasks/lessons.md" "tasks/lessons.md"
+
+echo ""
+if [ -n "$INSTALLED" ]; then
+  echo "✅ Installed:$INSTALLED"
+fi
+if [ -n "$SKIPPED" ]; then
+  echo "⏭️  Skipped (already exist):$SKIPPED"
+  echo ""
+  echo "💡 To update existing files, run:"
+  echo "   curl -sSL https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/master/update.sh | bash"
+fi
+
 echo ""
 echo "Next steps:"
 echo "  1. Install pi: npm install -g @mariozechner/pi-coding-agent"
