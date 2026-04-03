@@ -8,10 +8,10 @@ Copy to your project in one command:
 
 ```bash
 # Using curl (recommended)
-curl -sSL https://raw.githubusercontent.com/YOUR_USERNAME/pi-starter/main/install.sh | bash -s -- your-project/
+curl -sSL https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/main/install.sh | bash -s -- your-project/
 
 # Or clone and copy
-git clone https://github.com/YOUR_USERNAME/pi-starter.git /tmp/pi-starter
+git clone https://github.com/rakeshtembhurne/pi-starter.git /tmp/pi-starter
 cp -r /tmp/pi-starter/{AGENTS.md,.pi,tasks} your-project/
 rm -rf /tmp/pi-starter
 ```

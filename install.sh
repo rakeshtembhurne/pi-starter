@@ -1,6 +1,6 @@
 #!/bin/bash
 # Install pi-starter into a project directory
-# Usage: curl -sSL https://raw.githubusercontent.com/YOUR_USERNAME/pi-starter/main/install.sh | bash -s -- <target-dir>
+# Usage: curl -sSL https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/main/install.sh | bash -s -- <target-dir>
 
 set -e
 
@@ -14,7 +14,7 @@ else
 fi
 
 # Download files from GitHub
-BASE_URL="https://raw.githubusercontent.com/YOUR_USERNAME/pi-starter/main"
+BASE_URL="https://raw.githubusercontent.com/rakeshtembhurne/pi-starter/main"
 
 # Create directories
 mkdir -p "$TARGET/.pi/extensions"
