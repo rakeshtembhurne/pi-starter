@@ -31,3 +31,7 @@ coverage/
 tmp/
 temp/
 *.tmp
+
+# AI Assistant working directory (safe to delete: rm -rf .ai/)
+.ai/
+auth.json

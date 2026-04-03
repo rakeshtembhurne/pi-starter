@@ -24,12 +24,33 @@ pi
 │   │   ├── safety.ts       # Blocks dangerous bash commands
 │   │   ├── git-safety.ts   # Protects git operations
 │   │   ├── usage.ts        # Token/cost tracking (/usage)
-│   │   └── files.ts        # Enhanced directory listing
+│   │   ├── files.ts        # Enhanced directory listing
+│   │   └── commit.ts       # Quality checks + commit (/commit)
 │   └── settings.json    # Project-level settings
+├── .ai/                   # AI temporary files (safe to delete)
+│   ├── tmp/               # Screenshots, test outputs, temp files
+│   ├── plans/             # AI thinking and strategy plans
+│   ├── cache/             # Cached data (embeddings, indexes)
+│   ├── logs/              # Session logs
+│   └── drafts/            # Work-in-progress drafts
 ├── AGENTS.md            # This file - AI context and guidelines
 ├── README.md            # User documentation
 └── tasks/               # Task tracking
 ```
+
+## AI Temporary Files (.ai/)
+
+**Store ALL temporary AI files in `.ai/` directory** - not scattered in project root or src/.
+
+| Directory | Purpose |
+|-----------|---------|
+| `.ai/tmp/` | Screenshots, test outputs, render previews |
+| `.ai/plans/` | AI thinking, strategy, analysis |
+| `.ai/cache/` | Cached embeddings, search indexes |
+| `.ai/logs/` | Session logs, execution traces |
+| `.ai/drafts/` | Work-in-progress not ready for main project |
+
+**Safe to delete**: `rm -rf .ai/` is safe - the AI will recreate what it needs.
 
 ## Coding Standards
 
@@ -57,6 +78,7 @@ pi
 | git-safety | Confirms dangerous git operations | Automatic |
 | usage | Track session tokens/costs | `/usage` |
 | files | Enhanced directory listing | Tool: `list_dir` |
+| commit | Lint, typecheck, build, format → commit | `/commit` |
 
 ## Customization
 

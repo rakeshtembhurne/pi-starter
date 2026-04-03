@@ -30,6 +30,7 @@ pi
 | `AGENTS.md` | AI context and coding guidelines |
 | `.pi/extensions/` | TypeScript extensions |
 | `.pi/settings.json` | Sensible defaults |
+| `.ai/` | AI temporary files (screenshots, plans, drafts) |
 | `tasks/` | Task tracking templates |
 
 ### Extensions
@@ -41,6 +42,7 @@ pi
 | `usage.ts` | `/usage` - show session tokens and cost |
 | `files.ts` | `list_dir` tool with emoji icons |
 | `git-flow.ts` | Enforces GitFlow workflow (see below) |
+| `commit.ts` | Quality checks → commit (runs lint, types, build, format) |
 
 ### GitFlow Extension
 
