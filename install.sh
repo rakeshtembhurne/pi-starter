@@ -21,22 +21,22 @@ mkdir -p "$TARGET/.pi/extensions"
 mkdir -p "$TARGET/tasks"
 
 # Download core files
-curl -sSL -H "Accept-Encoding: identity" "$BASE_URL/AGENTS.md" -o "$TARGET/AGENTS.md"
-curl -sSL -H "Accept-Encoding: identity" "$BASE_URL/.gitignore" -o "$TARGET/.gitignore"
+curl -sSL "$BASE_URL/AGENTS.md" -o "$TARGET/AGENTS.md"
+curl -sSL "$BASE_URL/.gitignore" -o "$TARGET/.gitignore"
 
 # Download extensions
-curl -sSL -H "Accept-Encoding: identity" "$BASE_URL/.pi/extensions/safety.ts" -o "$TARGET/.pi/extensions/safety.ts"
-curl -sSL -H "Accept-Encoding: identity" "$BASE_URL/.pi/extensions/git-safety.ts" -o "$TARGET/.pi/extensions/git-safety.ts"
-curl -sSL -H "Accept-Encoding: identity" "$BASE_URL/.pi/extensions/usage.ts" -o "$TARGET/.pi/extensions/usage.ts"
-curl -sSL -H "Accept-Encoding: identity" "$BASE_URL/.pi/extensions/files.ts" -o "$TARGET/.pi/extensions/files.ts"
-curl -sSL -H "Accept-Encoding: identity" "$BASE_URL/.pi/extensions/git-flow.ts" -o "$TARGET/.pi/extensions/git-flow.ts"
+curl -sSL "$BASE_URL/.pi/extensions/safety.ts" -o "$TARGET/.pi/extensions/safety.ts"
+curl -sSL "$BASE_URL/.pi/extensions/git-safety.ts" -o "$TARGET/.pi/extensions/git-safety.ts"
+curl -sSL "$BASE_URL/.pi/extensions/usage.ts" -o "$TARGET/.pi/extensions/usage.ts"
+curl -sSL "$BASE_URL/.pi/extensions/files.ts" -o "$TARGET/.pi/extensions/files.ts"
+curl -sSL "$BASE_URL/.pi/extensions/git-flow.ts" -o "$TARGET/.pi/extensions/git-flow.ts"
 
 # Download settings
-curl -sSL -H "Accept-Encoding: identity" "$BASE_URL/.pi/settings.json" -o "$TARGET/.pi/settings.json"
+curl -sSL "$BASE_URL/.pi/settings.json" -o "$TARGET/.pi/settings.json"
 
 # Download task templates
-curl -sSL -H "Accept-Encoding: identity" "$BASE_URL/tasks/todo.md" -o "$TARGET/tasks/todo.md"
-curl -sSL -H "Accept-Encoding: identity" "$BASE_URL/tasks/lessons.md" -o "$TARGET/tasks/lessons.md"
+curl -sSL "$BASE_URL/tasks/todo.md" -o "$TARGET/tasks/todo.md"
+curl -sSL "$BASE_URL/tasks/lessons.md" -o "$TARGET/tasks/lessons.md"
 
 echo ""
 echo "✅ pi-starter installed in $TARGET"
