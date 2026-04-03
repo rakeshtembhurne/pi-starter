@@ -29,6 +29,7 @@ curl -sSL "$BASE_URL/.pi/extensions/safety.ts" -o "$TARGET/.pi/extensions/safety
 curl -sSL "$BASE_URL/.pi/extensions/git-safety.ts" -o "$TARGET/.pi/extensions/git-safety.ts"
 curl -sSL "$BASE_URL/.pi/extensions/usage.ts" -o "$TARGET/.pi/extensions/usage.ts"
 curl -sSL "$BASE_URL/.pi/extensions/files.ts" -o "$TARGET/.pi/extensions/files.ts"
+curl -sSL "$BASE_URL/.pi/extensions/git-flow.ts" -o "$TARGET/.pi/extensions/git-flow.ts"
 
 # Download settings
 curl -sSL "$BASE_URL/.pi/settings.json" -o "$TARGET/.pi/settings.json"

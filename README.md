@@ -37,6 +37,7 @@ pi
 | `git-safety.ts` | Confirms dangerous git operations (`git push --force`, etc.) |
 | `usage.ts` | `/usage` - show session tokens and cost |
 | `files.ts` | `list_dir` tool with emoji icons |
+| `git-flow.ts` | Enforces git flow workflow |
 
 ## Requirements
 
