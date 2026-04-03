@@ -35,7 +35,7 @@ A complete software development workflow for this project.
 
 | Task | Command | Purpose |
 |------|---------|---------|
-| How to Use | `/skill:jarvis-using` | Skill invocation rules (optional) |
+| Check First | `/skill:jarvis-check` | Check for applicable skills before any action |
 | Design | `/skill:jarvis-brainstorming` | Explore requirements, write design spec |
 | Plan | `/skill:jarvis-writing-plans` | Create implementation plan, sync tasks |
 | Implement | `/skill:jarvis-inline-execution` | Execute plan tasks, update tasks |

@@ -1,6 +1,6 @@
 ---
-name: jarvis-using
-description: "Use when starting any conversation - establishes how to find and use Jarvis skills. Invoke via /skill:jarvis-using"
+name: jarvis-check
+description: "Use before any action - establishes how to find and use Jarvis skills. Invoke via /skill:jarvis-check"
 ---
 
 <SUBAGENT-STOP>
